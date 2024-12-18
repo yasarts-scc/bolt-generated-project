@@ -2,6 +2,7 @@ import { Group, Text, useMantineTheme } from '@mantine/core'
 import { Dropzone } from '@mantine/dropzone'
 import { IconUpload, IconFile, IconX } from '@tabler/icons-react'
 import { useDocumentStore } from '../../stores/documentStore'
+import '@mantine/dropzone/styles.css'
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB
 

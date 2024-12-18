@@ -1,4 +1,4 @@
-import { AppShell, Navbar, Header } from '@mantine/core'
+import { AppShell, Header } from '@mantine/core'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import AuthGuard from './components/layout/AuthGuard'
@@ -19,16 +19,26 @@ export default function App() {
           <AuthGuard>
             <AppShell
               padding="md"
-              navbar={<Navigation />}
-              header={<Header height={60} p="xs">AI Prompt Manager</Header>}
+              navbar={{ width: 250, breakpoint: 'sm' }}
+              header={{ height: 60 }}
             >
-              <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/ai-models" element={<AIModels />} />
-                <Route path="/prompts" element={<Prompts />} />
-                <Route path="/documents" element={<Documents />} />
-                <Route path="*" element={<Navigate to="/" replace />} />
-              </Routes>
+              <AppShell.Header>
+                <Header height={60} p="xs">AI Prompt Manager</Header>
+              </AppShell.Header>
+
+              <AppShell.Navbar>
+                <Navigation />
+              </AppShell.Navbar>
+
+              <AppShell.Main>
+                <Routes>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/ai-models" element={<AIModels />} />
+                  <Route path="/prompts" element={<Prompts />} />
+                  <Route path="/documents" element={<Documents />} />
+                  <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+              </AppShell.Main>
             </AppShell>
           </AuthGuard>
         }

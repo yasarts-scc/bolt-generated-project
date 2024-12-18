@@ -4,7 +4,7 @@ import PromptList from '../components/prompts/PromptList'
 import PromptEditor from '../components/prompts/PromptEditor'
 import PromptPreview from '../components/prompts/PromptPreview'
 import PromptSearch from '../components/prompts/PromptSearch'
-import FolderTree from '../components/prompts/FolderTree'
+import FolderTree from '../components/shared/FolderTree'
 import ImportExportButtons from '../components/prompts/ImportExportButtons'
 import { usePromptStore } from '../stores/promptStore'
 
@@ -53,6 +53,7 @@ export default function Prompts() {
             <FolderTree 
               onFolderSelect={setSelectedFolder}
               selectedFolder={selectedFolder}
+              type="prompt"
             />
           </Paper>
           

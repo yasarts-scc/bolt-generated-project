@@ -1,4 +1,4 @@
-import { Navbar, UnstyledButton, Stack } from '@mantine/core'
+import { NavLink } from '@mantine/core'
 import { useNavigate } from 'react-router-dom'
 import { IconDashboard, IconRobot, IconPrompt, IconFiles } from '@tabler/icons-react'
 
@@ -13,19 +13,15 @@ export default function Navigation() {
   ]
 
   return (
-    <Navbar width={{ base: 250 }} p="xs">
-      <Stack>
-        {navItems.map((item) => (
-          <UnstyledButton
-            key={item.path}
-            onClick={() => navigate(item.path)}
-            p="xs"
-          >
-            <item.icon size={20} />
-            {item.label}
-          </UnstyledButton>
-        ))}
-      </Stack>
-    </Navbar>
+    <nav style={{ width: 250, padding: '1rem' }}>
+      {navItems.map((item) => (
+        <NavLink
+          key={item.path}
+          onClick={() => navigate(item.path)}
+          label={item.label}
+          leftSection={<item.icon size={20} />}
+        />
+      ))}
+    </nav>
   )
 }

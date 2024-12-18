@@ -4,7 +4,7 @@ import DocumentList from '../components/documents/DocumentList'
 import DocumentUpload from '../components/documents/DocumentUpload'
 import DocumentPreview from '../components/documents/DocumentPreview'
 import DocumentSearch from '../components/documents/DocumentSearch'
-import FolderTree from '../components/documents/FolderTree'
+import FolderTree from '../components/shared/FolderTree'
 import { useDocumentStore } from '../stores/documentStore'
 
 export default function Documents() {
